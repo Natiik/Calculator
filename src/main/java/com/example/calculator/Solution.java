@@ -21,7 +21,7 @@ class Solution {
     public static int getAction(String[] single) {
         int a = 0;
         for (int i = 0; i < single.length; i++) {
-            if ((single[i].equalsIgnoreCase("+")) || (single[i].equalsIgnoreCase("-")) || (single[i].equalsIgnoreCase("*")) || (single[i].equalsIgnoreCase("&"))) {
+            if ((single[i].equalsIgnoreCase("+")) || (single[i].equalsIgnoreCase("-")) || (single[i].equalsIgnoreCase("*")) || (single[i].equalsIgnoreCase("_"))) {
                 a = i;
             }
         }
@@ -55,7 +55,7 @@ class Solution {
             result= number1 - number2;
         } else if (operator.equalsIgnoreCase("*")) {
             result=number1 * number2;
-        } else if (operator.equalsIgnoreCase("&")) {
+        } else if (operator.equalsIgnoreCase("_")) {
             result= number1 / number2;
         }
         return result;
