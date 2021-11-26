@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-    @GetMapping ("/{math}")
+    @GetMapping (value = "/{math}")
     public String Answer (@PathVariable String math){
-        return Solution.Solve(math);
-        //return math;
+        //String math="4+5";
+        return Solution.solve(math);
     }
 
 }

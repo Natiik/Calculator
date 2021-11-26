@@ -3,13 +3,13 @@ package com.example.calculator;
 
 class Solution {
 
-    public static String Solve(String input) {
+    public static String solve(String input) {
         String[] math = splitString(input);
         int action = getAction(math);
         int equal= getEqual(math);
         double number1 = getNumber(math, 0, action);
         double number2 = getNumber(math, action + 1, equal);
-        return ""+Result(math[action],number1,number2);
+        return ""+ result(math[action],number1,number2);
     }
 
     public static String[] splitString(String problem) {
@@ -47,7 +47,7 @@ class Solution {
         return Double.parseDouble(number);
     }
 
-    public static double Result(String operator, double number1, double number2) {
+    public static double result(String operator, double number1, double number2) {
         double result=0;
         if (operator.equalsIgnoreCase("+")) {
             result=number1 + number2;

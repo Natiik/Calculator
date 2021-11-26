@@ -3,7 +3,12 @@
 <head>
     <title> Calculator</title>
     <script>
-
+    function getString(){
+        return (document.getElementById("input").textContent).replaceAll("/","_");
+    }
+    function getAnswer(){
+        fetch('http://localhost:8080/'+getString()).then(r=>r.json()).then(r => document.getElementById("input").textContent=r);
+    }
     </script>
     <style>
         .number {background-color:#c5b9cd;
@@ -55,13 +60,12 @@
 
 <body>
 <div id="Keyboard">
-    <textarea class="label type"  id="input"></textarea>
+    <label class="label type" name="math"  id="input"></label>
     <br>
     <button class="button number" onclick='document.getElementById("input").textContent += "1"'>1</button>
     <button class="button number" onclick='document.getElementById("input").textContent += "2"'>2</button>
     <button class="button number" onclick='document.getElementById("input").textContent += "3"'>3</button>
     <button class="button math" onclick='document.getElementById("input").textContent += "+"'>+</button>
-    <button class="button math" onclick='document.output()'><-</button>
 
     <br>
     <button class="button number" onclick='document.getElementById("input").textContent += "4"'>4</button>
@@ -78,7 +82,7 @@
 
 
     <br>
-    <button class="button math" onclick='document.getElementById("input").textContent += "="'>=</button>
+    <button class="button math" onclick='getAnswer()'>=</button>
     <button class="button number" onclick='document.getElementById("input").textContent += "0"'>0</button>
     <button class="button math" onclick='document.getElementById("input").textContent += "."'>.</button>
     <button class="button math" onclick='document.getElementById("input").textContent += "/"'>/</button>
