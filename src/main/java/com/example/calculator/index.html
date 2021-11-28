@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title> Calculator</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        function getString() {
+            return (document.getElementById("input").textContent).replaceAll("/", "_");
+        }
+
+        function getAnswer() {
+            fetch('http://localhost:8080/' + getString()).then(r => r.json()).then(r => document.getElementById("input").textContent = r);
+        }
+
+        function deleteSymbol(){
+            document.getElementById("input").textContent = (document.getElementById("input").textContent).substring(0, (document.getElementById("input").textContent).length-1);
+        }
+    </script>
+</head>
+
+<body>
+<div class="calculator">
+    <div class="line_first">
+        <br>
+        <figure class="frame">
+            <label class="type" id="input"></label>
+        </figure>
+        <button class="key_assist" onclick="deleteSymbol()">
+            <i class="material-icons">backspace</i>
+        </button>
+    </div>
+
+    <div class="keyboard">
+        <div class="line">
+            <button class="key" onclick='document.getElementById("input").textContent += "1"'>1</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "2"'>2</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "3"'>3</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "+"'>+</button>
+        </div>
+
+        <div class="line">
+            <button class="key" onclick='document.getElementById("input").textContent += "4"'>4</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "5"'>5</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "6"'>6</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "-"'>-</button>
+        </div>
+        <div class="line">
+            <button class="key" onclick='document.getElementById("input").textContent += "7"'>7</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "8"'>8</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "9"'>9</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "*"'>*</button>
+        </div>
+
+        <div class="line">
+            <button class="key" onclick='getAnswer()'>=</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "0"'>0</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "."'>.</button>
+            <button class="key" onclick='document.getElementById("input").textContent += "/"'>/</button>
+        </div>
+        <div class="line">
+            <br>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+.calculator {
+    position: relative;
+    width: 500px;
+    hight: 800px;
+    top: 100px;
+    left: 200px;
+    background-color: #2893bd;
+}
+
+.keyboard {
+    text-align: center;
+}
+
+.frame{
+    text-align: center;
+    width: 260px;
+    height: 40px ;
+}
+.type {
+    text-align: center;
+    position: center;
+    font-size: 40px;
+    font-family: "Century Gothic";
+    color: #ffffff;
+}
+
+.line {
+    padding-bottom: 3px;
+}
+
+.line_first {
+    padding-bottom: 3px;
+    position: relative;
+    left:48px;
+
+}
+
+.key {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 28px;
+    font-family: "Century Gothic";
+    cursor: pointer;
+    border-radius: 2px;
+    border-style: hidden;
+    width: 100px;
+    height: 80%;
+}
+
+.key:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+.key_assist {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 32px;
+    font-family: "Century Gothic";
+    cursor: pointer;
+    border-radius: 2px;
+    border-style: hidden;
+    width: 100px;
+    height: 80%;
+    position:relative;
+    z-index: 2;
+    left:308px;
+}
+
+.key_assist:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
